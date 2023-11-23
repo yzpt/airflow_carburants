@@ -107,9 +107,11 @@ sed -i 's/load_examples = True/load_examples = False/g' airflow.cfg
 
     ![dag_screen](./img/dag_screen.png)
 
-* Check the data: 
+* Check the data : 
 
     ```bash
+    # (psql_select.sh)
+
     USER_NAME=yzpt
     DB_NAME=carburants
     TABLE_NAME=records
@@ -124,6 +126,18 @@ sed -i 's/load_examples = True/load_examples = False/g' airflow.cfg
     ```
 
     ![check data screen](./img/check_screen.png)
+
+* Close the webserver
+
+    After closing the webserver, the process is still running in the background. To kill it, we need to find the PID and kill it.
+
+    ```bash
+    # Read the PID from the file
+    PID=$(cat airflow-webserver.pid)
+    
+    # Kill the process
+    kill -9 $PID
+    ```
 
 ## 2. Docker implementation
 
