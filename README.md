@@ -30,10 +30,10 @@ pip freeze > requirements.txt
 sudo apt install postgresql
 
 # variables
-DB_NAME=carburants
-TABLE_NAME=records
-USERNAME=user
-PASSWORD=password
+export DB_NAME=carburants
+export TABLE_NAME=records
+export USERNAME=user
+export PASSWORD=password
 
 # create user and database
 sudo -i -u postgres psql  <<EOF
@@ -79,7 +79,7 @@ EOF
 
 ```bash
 # init airflow
-export AIRFLOW_HOME=/home/yzpt/projects/carburant_gcp
+export AIRFLOW_HOME=$(pwd)
 airflow db init
 airflow users create --username admin --firstname Yohann --lastname Zapart --role Admin --email yohann@zapart.com
 
@@ -88,56 +88,62 @@ sed -i 's/load_examples = True/load_examples = False/g' airflow.cfg
 ```
 * New terminal : starting scheduler
 
-    ```bash
-    # starting scheduler
-    source venv/bin/activate
-    export AIRFLOW_HOME=/home/yzpt/projects/carburant_gcp
-    airflow scheduler
-    ```
+```bash
+# starting scheduler
+cd <project_path>
+source venv/bin/activate
+export AIRFLOW_HOME=$(pwd)
+airflow scheduler
+```
 
 * New terminal : starting webserver
 
-    ```bash
-    source venv/bin/activate
-    export AIRFLOW_HOME=/home/yzpt/projects/carburant_gcp
-    airflow webserver --port 8080
-    ```
+```bash
+cd <project_path>
+source venv/bin/activate
+export AIRFLOW_HOME=$(pwd)
+airflow webserver --port 8080
+```
 
 * Airflow UI accessible at [http://localhost:8080](http://localhost:8080)
 
-    ![dag_screen](./img/dag_screen.png)
+![dag_screen](./img/dag_screen.png)
 
 * Check the data : 
 
-    ```bash
-    # (psql_select.sh)
+```bash
+psql -U $USERNAME $DB_NAME <<EOF
+SELECT id, record_timestamp, ville, adresse, latitude, longitude 
+FROM $TABLE_NAME 
+WHERE lower(ville) = 'lille'
+AND record_timestamp = (SELECT MAX(record_timestamp) FROM $TABLE_NAME WHERE lower(ville) = 'lille')
+ORDER BY record_timestamp DESC;
+\q
+EOF
+```
 
-    USER_NAME=yzpt
-    DB_NAME=carburants
-    TABLE_NAME=records
-    psql -U $USER_NAME $DB_NAME <<EOF
-    SELECT id, record_timestamp, ville, adresse, latitude, longitude 
-    FROM $TABLE_NAME 
-    WHERE lower(ville) = 'lille'
-    AND record_timestamp = (SELECT MAX(record_timestamp) FROM records WHERE lower(ville) = 'lille')
-    ORDER BY record_timestamp DESC;
-    \q
-    EOF
-    ```
+If psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "user_test"
 
-    ![check data screen](./img/check_screen.png)
+Then, edit the pg_hba.conf file and change the method column to password for the local connection:
+
+```bash
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+local   all             all                                     password
+```
+
+![check data screen](./img/check_screen.png)
 
 * Close the webserver
 
-    After closing the webserver, the process is still running in the background. To kill it, we need to find the PID and kill it.
+After closing the webserver, the process is still running in the background. To kill it, we need to find the PID and kill it.
 
-    ```bash
-    # Read the PID from the file
-    PID=$(cat airflow-webserver.pid)
-    
-    # Kill the process
-    kill -9 $PID
-    ```
+```bash
+# Read the PID from the file
+PID=$(cat airflow-webserver.pid)
+
+# Kill the process
+kill -9 $PID
+```
 
 ## 2. Docker implementation
 

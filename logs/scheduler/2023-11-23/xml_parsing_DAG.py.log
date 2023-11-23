@@ -786,3 +786,24 @@
 [2023-11-23T11:57:48.591+0100] {logging_mixin.py:151} INFO - [2023-11-23T11:57:48.591+0100] {dag.py:2941} INFO - Sync 1 DAGs
 [2023-11-23T11:57:48.610+0100] {logging_mixin.py:151} INFO - [2023-11-23T11:57:48.610+0100] {dag.py:3722} INFO - Setting next_dagrun for xml_parsing to 2023-11-23T10:56:00+00:00, run_after=2023-11-23T10:57:00+00:00
 [2023-11-23T11:57:48.626+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py took 0.071 seconds
+[2023-11-23T12:11:07.834+0100] {processor.py:157} INFO - Started process (PID=39114) to work on /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py
+[2023-11-23T12:11:07.837+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py for tasks to queue
+[2023-11-23T12:11:07.837+0100] {logging_mixin.py:151} INFO - [2023-11-23T12:11:07.837+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py
+[2023-11-23T12:11:07.851+0100] {processor.py:839} INFO - DAG(s) dict_keys(['xml_parsing']) retrieved from /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py
+[2023-11-23T12:11:07.869+0100] {logging_mixin.py:151} INFO - [2023-11-23T12:11:07.869+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-23T12:11:07.887+0100] {logging_mixin.py:151} INFO - [2023-11-23T12:11:07.887+0100] {dag.py:3722} INFO - Setting next_dagrun for xml_parsing to 2023-11-23T11:10:00+00:00, run_after=2023-11-23T11:11:00+00:00
+[2023-11-23T12:11:07.908+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py took 0.076 seconds
+[2023-11-23T12:11:38.022+0100] {processor.py:157} INFO - Started process (PID=39348) to work on /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py
+[2023-11-23T12:11:38.024+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py for tasks to queue
+[2023-11-23T12:11:38.025+0100] {logging_mixin.py:151} INFO - [2023-11-23T12:11:38.025+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py
+[2023-11-23T12:11:38.041+0100] {processor.py:839} INFO - DAG(s) dict_keys(['xml_parsing']) retrieved from /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py
+[2023-11-23T12:11:38.060+0100] {logging_mixin.py:151} INFO - [2023-11-23T12:11:38.060+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-23T12:11:38.083+0100] {logging_mixin.py:151} INFO - [2023-11-23T12:11:38.083+0100] {dag.py:3722} INFO - Setting next_dagrun for xml_parsing to 2023-11-23T11:10:00+00:00, run_after=2023-11-23T11:11:00+00:00
+[2023-11-23T12:11:38.219+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py took 0.200 seconds
+[2023-11-23T12:12:08.698+0100] {processor.py:157} INFO - Started process (PID=39448) to work on /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py
+[2023-11-23T12:12:08.701+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py for tasks to queue
+[2023-11-23T12:12:08.701+0100] {logging_mixin.py:151} INFO - [2023-11-23T12:12:08.701+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py
+[2023-11-23T12:12:08.715+0100] {processor.py:839} INFO - DAG(s) dict_keys(['xml_parsing']) retrieved from /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py
+[2023-11-23T12:12:08.733+0100] {logging_mixin.py:151} INFO - [2023-11-23T12:12:08.733+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-23T12:12:08.752+0100] {logging_mixin.py:151} INFO - [2023-11-23T12:12:08.752+0100] {dag.py:3722} INFO - Setting next_dagrun for xml_parsing to 2023-11-23T11:11:00+00:00, run_after=2023-11-23T11:12:00+00:00
+[2023-11-23T12:12:08.770+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py took 0.075 seconds

@@ -925,3 +925,33 @@ File Path                                                  PID    Runtime      #
 /home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py                           1           0  0.10s           2023-11-23T10:57:48
 ================================================================================
 [2023-11-23T11:58:05.548+0100] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2023-11-23T12:11:07.759+0100] {manager.py:487} INFO - Processing files using up to 1 processes at a time 
+[2023-11-23T12:11:07.770+0100] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2023-11-23T12:11:07.770+0100] {manager.py:489} INFO - Checking for new files in /home/yzpt/projects/carburant_gcp/dags every 300 seconds
+[2023-11-23T12:11:07.771+0100] {manager.py:755} INFO - Searching for files in /home/yzpt/projects/carburant_gcp/dags
+[2023-11-23T12:11:07.773+0100] {manager.py:758} INFO - There are 1 files in /home/yzpt/projects/carburant_gcp/dags
+[2023-11-23T12:11:07.933+0100] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py                           1           0  0.10s           2023-11-23T11:11:07
+================================================================================
+[2023-11-23T12:11:38.319+0100] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py                           1           0  0.30s           2023-11-23T11:11:38
+================================================================================
+[2023-11-23T12:12:08.795+0100] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/home/yzpt/projects/carburant_gcp/dags/xml_parsing_DAG.py                           1           0  0.10s           2023-11-23T11:12:08
+================================================================================
+[2023-11-23T12:12:18.297+0100] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
