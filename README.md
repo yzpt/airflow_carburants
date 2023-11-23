@@ -162,6 +162,8 @@ EOF
     Then, edit the pg_hba.conf file and change the method column to password for the local connection:
 
     ```bash
+    # <pg_hba.conf>
+    
     # TYPE  DATABASE        USER            ADDRESS                 METHOD
     local   all             all                                     password
     ```
