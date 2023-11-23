@@ -1,8 +1,9 @@
 # Airflow & PostgreSQL : Prix des carburants en France
 
-Implementing a data pipeline with Airflow and PostgreSQL through three different approaches:
-- Local
-- Docker
+Implementing a data pipeline with Airflow and PostgreSQL through 4 different approaches:
+- Local with python environment
+- Local cluster of containers with docker compose
+- Cloud run with Docker images on GCP
 - GCP : Composer & BigQuery
 
 <hr>
