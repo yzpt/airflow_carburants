@@ -124,14 +124,14 @@ EOF
 
 ![check data screen](./img/check_screen.png)
 
-If psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "user_test"
+    * If psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "user_test"
 
-Then, edit the pg_hba.conf file and change the method column to password for the local connection:
+    Then, edit the pg_hba.conf file and change the method column to password for the local connection:
 
-```bash
-# TYPE  DATABASE        USER            ADDRESS                 METHOD
-local   all             all                                     password
-```
+    ```bash
+    # TYPE  DATABASE        USER            ADDRESS                 METHOD
+    local   all             all                                     password
+    ```
 
 
 * Close the webserver
