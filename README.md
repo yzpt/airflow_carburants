@@ -86,7 +86,7 @@ airflow users create --username admin --firstname Yohann --lastname Zapart --rol
 # airflow.cfg --> don't load example dags
 sed -i 's/load_examples = True/load_examples = False/g' airflow.cfg
 ```
-* New terminal : starting scheduler
+#### New terminal : starting scheduler
 
 ```bash
 # starting scheduler
@@ -96,7 +96,7 @@ export AIRFLOW_HOME=$(pwd)
 airflow scheduler
 ```
 
-* New terminal : starting webserver
+#### New terminal : starting webserver
 
 ```bash
 cd <project_path>
@@ -105,11 +105,11 @@ export AIRFLOW_HOME=$(pwd)
 airflow webserver --port 8080
 ```
 
-* Airflow UI accessible at [http://localhost:8080](http://localhost:8080)
+#### Airflow UI accessible at [http://localhost:8080](http://localhost:8080)
 
 ![dag_screen](./img/dag_screen.png)
 
-* Check the data : 
+#### Check the data : 
 
 ```bash
 psql -U $USERNAME $DB_NAME <<EOF
@@ -124,7 +124,7 @@ EOF
 
 ![check data screen](./img/check_screen.png)
 
-* If psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "user_test"
+#### If psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "user_test"
 
     Then, edit the pg_hba.conf file and change the method column to password for the local connection:
 
@@ -134,7 +134,7 @@ EOF
     ```
 
 
-* Close the webserver
+#### Close the webserver
 
 After closing the webserver, the process is still running in the background. To kill it, we need to find the PID and kill it.
 
