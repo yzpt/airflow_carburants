@@ -128,7 +128,7 @@ airflow webserver --port 8080
 
 ![dag_screen](./img/dag_screen.png)
 
-#### Check the data : 
+#### Check the data
 
 ```bash
 psql -U $USERNAME $DB_NAME <<EOF
