@@ -45,9 +45,9 @@ pip freeze > requirements.txt
 
 ### 1.2. Postgresql 
 
-```bash
-sudo apt install postgresql
+#### Create user and database
 
+```bash
 # variables
 export DB_NAME=carburants
 export TABLE_NAME=records
@@ -63,7 +63,10 @@ ALTER ROLE $USERNAME SET default_transaction_isolation TO 'read committed';
 ALTER ROLE $USERNAME SET timezone TO 'Europe/Paris';
 GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $USERNAME;
 EOF
+```
+#### Create table
 
+```bash
 # create table
 sudo -i -u $USERNAME psql $DB_NAME <<EOF
 CREATE TABLE IF NOT EXISTS $TABLE_NAME (
@@ -96,6 +99,8 @@ EOF
 
 ### 1.3. Airflow
 
+#### Airflow initialization
+
 ```bash
 # init airflow
 export AIRFLOW_HOME=$(pwd)
@@ -105,26 +110,30 @@ airflow users create --username admin --firstname Yohann --lastname Zapart --rol
 # airflow.cfg --> don't load example dags
 sed -i 's/load_examples = True/load_examples = False/g' airflow.cfg
 ```
-#### New terminal : starting scheduler
+
+#### Star scheduler on a new terminal
 
 ```bash
-# starting scheduler
+# New terminal
 cd <project_path>
 source venv/bin/activate
 export AIRFLOW_HOME=$(pwd)
 airflow scheduler
 ```
 
-#### New terminal : starting webserver
+#### Start webserver on a new terminal
 
 ```bash
+# New terminal
 cd <project_path>
 source venv/bin/activate
 export AIRFLOW_HOME=$(pwd)
 airflow webserver --port 8080
 ```
 
-#### Airflow UI accessible at [http://localhost:8080](http://localhost:8080)
+#### Airflow UI
+
+Accessible at [http://localhost:8080](http://localhost:8080)
 
 ![dag_screen](./img/dag_screen.png)
 
@@ -143,7 +152,9 @@ EOF
 
 ![check data screen](./img/check_screen.png)
 
-#### If psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "user_test"
+##### Checking data : if peer authentication error 
+
+    If psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "user_test"
 
     Then, edit the pg_hba.conf file and change the method column to password for the local connection:
 
