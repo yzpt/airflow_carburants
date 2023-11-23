@@ -122,6 +122,8 @@ ORDER BY record_timestamp DESC;
 EOF
 ```
 
+![check data screen](./img/check_screen.png)
+
 If psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "user_test"
 
 Then, edit the pg_hba.conf file and change the method column to password for the local connection:
@@ -131,7 +133,6 @@ Then, edit the pg_hba.conf file and change the method column to password for the
 local   all             all                                     password
 ```
 
-![check data screen](./img/check_screen.png)
 
 * Close the webserver
 
