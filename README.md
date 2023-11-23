@@ -1,5 +1,13 @@
-# Open Data & GCP : Prix des carburants en France
+# Airflow & PostgreSQL : Prix des carburants en France
 
+Implementing a data pipeline with Airflow and PostgreSQL through three different approaches:
+- Local
+- Docker
+- GCP : Composer & BigQuery
+
+<hr>
+
+#### Data source
 [https://www.prix-carburants.gouv.fr/rubrique/opendata/](https://www.prix-carburants.gouv.fr/rubrique/opendata/)
 
 ## 1. Local implementation
@@ -21,30 +29,35 @@ pip freeze > requirements.txt
 ```bash
 sudo apt install postgresql
 
-sudo -i -u postgres psql <<EOF
-CREATE DATABASE carburants;
-CREATE USER yzpt WITH PASSWORD 'yzpt';
-ALTER ROLE yzpt SET client_encoding TO 'utf8';
-ALTER ROLE yzpt SET default_transaction_isolation TO 'read committed';
-ALTER ROLE yzpt SET timezone TO 'Europe/Paris';
-GRANT ALL PRIVILEGES ON DATABASE carburants TO yzpt;
+# variables
+DB_NAME=carburants
+TABLE_NAME=records
+USERNAME=user
+PASSWORD=password
+
+# create user and database
+sudo -i -u postgres psql  <<EOF
+CREATE DATABASE $DB_NAME;
+CREATE USER $USERNAME WITH PASSWORD '$PASSWORD';
+ALTER ROLE $USERNAME SET client_encoding TO 'utf8';
+ALTER ROLE $USERNAME SET default_transaction_isolation TO 'read committed';
+ALTER ROLE $USERNAME SET timezone TO 'Europe/Paris';
+GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $USERNAME;
 EOF
 
-sudo -i -u yzpt psql carburants <<EOF
-CREATE TABLE IF NOT EXISTS raw_fields (
+# create table
+sudo -i -u $USERNAME psql $DB_NAME <<EOF
+CREATE TABLE IF NOT EXISTS $TABLE_NAME (
     record_timestamp TIMESTAMP,
     id BIGINT,
-    latitude TEXT,
+    latitude REAL,
     longitude REAL,
-    cp TEXT,
+    cp VARCHAR(50),
     pop TEXT,
     adresse TEXT,
-    ville TEXT,
+    ville VARCHAR(50),
     horaires TEXT,
     services TEXT,
-    prix TEXT,
-    lon REAL,
-    lat REAL,
     gazole_maj TIMESTAMP,
     gazole_prix REAL,
     sp95_maj TIMESTAMP,
@@ -57,14 +70,6 @@ CREATE TABLE IF NOT EXISTS raw_fields (
     e10_prix REAL,
     sp98_maj TIMESTAMP,
     sp98_prix REAL,
-    carburants_disponibles TEXT,
-    carburants_indisponibles TEXT,
-    horaires_automate_24_24 TEXT,
-    services_service TEXT,
-    departement TEXT,
-    code_departement TEXT,
-    region TEXT,
-    code_region TEXT,
     PRIMARY KEY (record_timestamp, id)
 );
 EOF
@@ -78,20 +83,47 @@ export AIRFLOW_HOME=/home/yzpt/projects/carburant_gcp
 airflow db init
 airflow users create --username admin --firstname Yohann --lastname Zapart --role Admin --email yohann@zapart.com
 
-# starting scheduler
-source venv/bin/activate
-export AIRFLOW_HOME=/home/yzpt/projects/carburant_gcp
-airflow scheduler
+# airflow.cfg --> don't load example dags
+sed -i 's/load_examples = True/load_examples = False/g' airflow.cfg
 ```
-Then start webserver on a new terminal:
+* New terminal : starting scheduler
 
-```bash
-source venv/bin/activate
-export AIRFLOW_HOME=/home/yzpt/projects/carburant_gcp
-airflow webserver --port 8080
-```
+    ```bash
+    # starting scheduler
+    source venv/bin/activate
+    export AIRFLOW_HOME=/home/yzpt/projects/carburant_gcp
+    airflow scheduler
+    ```
 
+* New terminal : starting webserver
 
+    ```bash
+    source venv/bin/activate
+    export AIRFLOW_HOME=/home/yzpt/projects/carburant_gcp
+    airflow webserver --port 8080
+    ```
+
+* Airflow UI accessible at [http://localhost:8080](http://localhost:8080)
+
+    ![dag_screen](./img/dag_screen.png)
+
+* Check the data: 
+
+    ```bash
+    USER_NAME=yzpt
+    DB_NAME=carburants
+    TABLE_NAME=records
+    psql -U $USER_NAME $DB_NAME <<EOF
+    SELECT id, record_timestamp, ville, adresse, latitude, longitude 
+    FROM $TABLE_NAME 
+    WHERE lower(ville) = 'lille'
+    AND record_timestamp = (SELECT MAX(record_timestamp) FROM records WHERE lower(ville) = 'lille')
+    ORDER BY record_timestamp DESC;
+    \q
+    EOF
+    ```
+
+    ![check data screen](./img/check_screen.png)
 
 ## 2. Docker implementation
 

@@ -1,0 +1,17 @@
+[2023-11-23T11:29:09.481+0100] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: xml_parsing.db_insert scheduled__2023-11-23T10:28:00+00:00 [queued]>
+[2023-11-23T11:29:09.488+0100] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: xml_parsing.db_insert scheduled__2023-11-23T10:28:00+00:00 [queued]>
+[2023-11-23T11:29:09.488+0100] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2023-11-23T11:29:09.510+0100] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): db_insert> on 2023-11-23 10:28:00+00:00
+[2023-11-23T11:29:09.512+0100] {standard_task_runner.py:57} INFO - Started process 28929 to run task
+[2023-11-23T11:29:09.515+0100] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'xml_parsing', 'db_insert', 'scheduled__2023-11-23T10:28:00+00:00', '--job-id', '91', '--raw', '--subdir', 'DAGS_FOLDER/xml_parsing_DAG.py', '--cfg-path', '/tmp/tmpuwgsi87d']
+[2023-11-23T11:29:09.516+0100] {standard_task_runner.py:85} INFO - Job 91: Subtask db_insert
+[2023-11-23T11:29:09.546+0100] {task_command.py:416} INFO - Running <TaskInstance: xml_parsing.db_insert scheduled__2023-11-23T10:28:00+00:00 [running]> on host yzpt-Lenovo-ideapad-320S-14IKB
+[2023-11-23T11:29:10.011+0100] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='xml_parsing' AIRFLOW_CTX_TASK_ID='db_insert' AIRFLOW_CTX_EXECUTION_DATE='2023-11-23T10:28:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-23T10:28:00+00:00'
+[2023-11-23T11:29:10.874+0100] {logging_mixin.py:151} INFO - Connected to database successfully.
+[2023-11-23T11:29:10.874+0100] {logging_mixin.py:151} INFO - Loading ...
+[2023-11-23T11:29:14.767+0100] {logging_mixin.py:151} INFO - Data inserted successfully.
+[2023-11-23T11:29:14.767+0100] {logging_mixin.py:151} INFO - Connection closed.
+[2023-11-23T11:29:14.822+0100] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-23T11:29:14.825+0100] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=xml_parsing, task_id=db_insert, execution_date=20231123T102800, start_date=20231123T102909, end_date=20231123T102914
+[2023-11-23T11:29:14.848+0100] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-23T11:29:14.857+0100] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -14,7 +14,10 @@ pip install "apache-airflow[celery]==2.7.2" --constraint "https://raw.githubuser
 # === Airflow local ===========================================================================================
 export AIRFLOW_HOME=/home/yzpt/projects/carburant_gcp
 airflow db init
-airflow users create --username admin --firstname Yohann --lastname Zapart --role Admin --email yohann@zapart.com
+airflow users create --username admin --firstname Yohann --lastname Zapart --role Admin --email yohann@zapart.com --password admin
+
+# airflow.cfg --> don't load example dags
+sed -i 's/load_examples = True/load_examples = False/g' airflow.cfg
 
 # starting scheduler
 source venv/bin/activate
@@ -70,13 +73,6 @@ CREATE TABLE IF NOT EXISTS records (
     e10_prix REAL,
     sp98_maj TIMESTAMP,
     sp98_prix REAL,
-    carburants_disponibles VARCHAR(50),
-    carburants_indisponibles VARCHAR(50),
-    horaires_automate_24_24 TEXT,
-    departement VARCHAR(50),
-    code_departement VARCHAR(50),
-    region VARCHAR(50),
-    code_region VARCHAR(50),
     PRIMARY KEY (record_timestamp, id)
 );
 EOF
@@ -86,7 +82,7 @@ EOF
 SELECT id, record_timestamp from records ORDER BY record_timestamp DESC LIMIT 5;
 
 sudo -i -u yzpt psql carburants <<EOF > query_results.txt
-SELECT * FROM raw_fields ORDER BY record_timestamp DESC;
+SELECT * FROM records ORDER BY record_timestamp DESC;
 EOF
 
 sudo -i -u yzpt psql carburants
