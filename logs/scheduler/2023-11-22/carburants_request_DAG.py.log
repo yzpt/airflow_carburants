@@ -1,0 +1,231 @@
+[2023-11-22T21:03:25.729+0000] {processor.py:157} INFO - Started process (PID=38) to work on /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:03:25.747+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T21:03:25.783+0000] {logging_mixin.py:154} INFO - [2023-11-22T21:03:25.770+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:03:26.056+0000] {logging_mixin.py:154} INFO - [2023-11-22T21:03:26.037+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/carburants_request_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/carburants_request_DAG.py", line 5, in <module>
+    from carburants_request import extract_data
+  File "/opt/airflow/dags/carburants_request.py", line 6, in <module>
+    conn = psycopg2.connect(
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+[2023-11-22T21:03:26.063+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:03:26.131+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/carburants_request_DAG.py took 0.445 seconds
+[2023-11-22T21:03:56.248+0000] {processor.py:157} INFO - Started process (PID=93) to work on /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:03:56.250+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T21:03:56.253+0000] {logging_mixin.py:154} INFO - [2023-11-22T21:03:56.253+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:03:56.263+0000] {logging_mixin.py:154} INFO - [2023-11-22T21:03:56.261+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/carburants_request_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/carburants_request_DAG.py", line 5, in <module>
+    from carburants_request import extract_data
+  File "/opt/airflow/dags/carburants_request.py", line 6, in <module>
+    conn = psycopg2.connect(
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+[2023-11-22T21:03:56.264+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:03:56.325+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/carburants_request_DAG.py took 0.081 seconds
+[2023-11-22T21:04:26.736+0000] {processor.py:157} INFO - Started process (PID=148) to work on /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:04:26.738+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T21:04:26.742+0000] {logging_mixin.py:154} INFO - [2023-11-22T21:04:26.741+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:04:26.751+0000] {logging_mixin.py:154} INFO - [2023-11-22T21:04:26.749+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/carburants_request_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/carburants_request_DAG.py", line 5, in <module>
+    from carburants_request import extract_data
+  File "/opt/airflow/dags/carburants_request.py", line 6, in <module>
+    conn = psycopg2.connect(
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+[2023-11-22T21:04:26.752+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:04:26.796+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/carburants_request_DAG.py took 0.064 seconds
+[2023-11-22T21:04:57.135+0000] {processor.py:157} INFO - Started process (PID=203) to work on /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:04:57.136+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T21:04:57.141+0000] {logging_mixin.py:154} INFO - [2023-11-22T21:04:57.141+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:04:57.150+0000] {logging_mixin.py:154} INFO - [2023-11-22T21:04:57.148+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/carburants_request_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/carburants_request_DAG.py", line 5, in <module>
+    from carburants_request import extract_data
+  File "/opt/airflow/dags/carburants_request.py", line 6, in <module>
+    conn = psycopg2.connect(
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+[2023-11-22T21:04:57.151+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:04:57.180+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/carburants_request_DAG.py took 0.049 seconds
+[2023-11-22T21:05:27.391+0000] {processor.py:157} INFO - Started process (PID=258) to work on /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:05:27.392+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T21:05:27.397+0000] {logging_mixin.py:154} INFO - [2023-11-22T21:05:27.397+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:05:27.407+0000] {logging_mixin.py:154} INFO - [2023-11-22T21:05:27.405+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/carburants_request_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/carburants_request_DAG.py", line 5, in <module>
+    from carburants_request import extract_data
+  File "/opt/airflow/dags/carburants_request.py", line 6, in <module>
+    conn = psycopg2.connect(
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+[2023-11-22T21:05:27.408+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/carburants_request_DAG.py
+[2023-11-22T21:05:27.437+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/carburants_request_DAG.py took 0.050 seconds
+[2023-11-22T23:22:09.786+0100] {processor.py:157} INFO - Started process (PID=20767) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:22:09.789+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:22:09.790+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:22:09.789+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:22:09.817+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:22:09.846+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:22:09.846+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:22:09.883+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:22:09.883+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:22:09.904+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.121 seconds
+[2023-11-22T23:22:40.781+0100] {processor.py:157} INFO - Started process (PID=21170) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:22:40.782+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:22:40.793+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:22:40.791+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:22:40.846+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:22:40.921+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:22:40.921+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:22:40.997+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:22:40.997+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:22:41.017+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.249 seconds
+[2023-11-22T23:23:15.371+0100] {processor.py:157} INFO - Started process (PID=21548) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:23:15.372+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:23:15.373+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:23:15.373+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:23:15.398+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:23:15.446+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:23:15.444+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:23:15.555+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:23:15.555+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:23:15.664+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.296 seconds
+[2023-11-22T23:23:46.310+0100] {processor.py:157} INFO - Started process (PID=21916) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:23:46.311+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:23:46.313+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:23:46.311+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:23:46.353+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:23:46.370+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:23:46.370+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:23:46.390+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:23:46.390+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:23:46.427+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.120 seconds
+[2023-11-22T23:24:19.597+0100] {processor.py:157} INFO - Started process (PID=22430) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:24:19.599+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:24:19.599+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:24:19.599+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:24:19.625+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:24:19.644+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:24:19.644+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:24:19.669+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:24:19.668+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:24:19.699+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.105 seconds
+[2023-11-22T23:24:50.576+0100] {processor.py:157} INFO - Started process (PID=22869) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:24:50.582+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:24:50.587+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:24:50.587+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:24:50.859+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:24:50.980+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:24:50.980+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:24:51.116+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:24:51.116+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:24:51.263+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.709 seconds
+[2023-11-22T23:25:21.437+0100] {processor.py:157} INFO - Started process (PID=22944) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:25:21.440+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:25:21.441+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:25:21.440+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:25:21.466+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:25:21.509+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:25:21.507+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:25:21.706+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:25:21.706+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:25:21.787+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.352 seconds
+[2023-11-22T23:25:52.017+0100] {processor.py:157} INFO - Started process (PID=22970) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:25:52.020+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:25:52.021+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:25:52.021+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:25:52.045+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:25:52.062+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:25:52.061+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:25:52.080+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:25:52.080+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:25:52.101+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.086 seconds
+[2023-11-22T23:26:22.298+0100] {processor.py:157} INFO - Started process (PID=23028) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:26:22.299+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:26:22.299+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:26:22.299+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:26:22.324+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:26:22.340+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:26:22.340+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:26:22.359+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:26:22.359+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:26:22.379+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.084 seconds
+[2023-11-22T23:26:52.563+0100] {processor.py:157} INFO - Started process (PID=23054) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:26:52.566+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:26:52.567+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:26:52.567+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:26:52.592+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:26:52.610+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:26:52.610+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:26:52.632+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:26:52.632+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:26:52.651+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.091 seconds
+[2023-11-22T23:27:22.969+0100] {processor.py:157} INFO - Started process (PID=23253) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:27:22.971+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:27:22.972+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:27:22.972+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:27:22.997+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:27:23.013+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:27:23.013+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:27:23.034+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:27:23.033+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:27:23.051+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.085 seconds
+[2023-11-22T23:27:53.764+0100] {processor.py:157} INFO - Started process (PID=23679) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:27:53.766+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:27:53.767+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:27:53.767+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:27:53.802+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:27:53.850+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:27:53.850+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:27:53.939+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:27:53.939+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:27:53.987+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.226 seconds
+[2023-11-22T23:28:31.410+0100] {processor.py:157} INFO - Started process (PID=24441) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:28:31.418+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:28:31.422+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:28:31.420+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:28:31.556+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:28:31.630+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:28:31.629+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:28:31.750+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:28:31.749+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:28:31.829+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.432 seconds
+[2023-11-22T23:29:06.772+0100] {processor.py:157} INFO - Started process (PID=24946) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:29:06.778+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:29:06.780+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:29:06.779+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:29:06.858+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:29:06.906+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:29:06.905+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:29:06.967+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:29:06.966+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:29:07.011+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.249 seconds
+[2023-11-22T23:29:37.972+0100] {processor.py:157} INFO - Started process (PID=25201) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:29:37.975+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:29:37.978+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:29:37.977+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:29:38.056+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:29:38.108+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:29:38.108+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:29:38.170+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:29:38.170+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:10:00+00:00, run_after=2023-11-22T22:20:00+00:00
+[2023-11-22T23:29:38.224+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.260 seconds
+[2023-11-22T23:30:10.107+0100] {processor.py:157} INFO - Started process (PID=25519) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:30:10.113+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:30:10.116+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:30:10.115+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:30:10.204+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:30:10.261+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:30:10.260+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:30:10.368+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:30:10.367+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:20:00+00:00, run_after=2023-11-22T22:30:00+00:00
+[2023-11-22T23:30:10.460+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.364 seconds
+[2023-11-22T23:30:44.326+0100] {processor.py:157} INFO - Started process (PID=25806) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:30:44.335+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:30:44.337+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:30:44.336+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:30:44.445+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:30:44.538+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:30:44.537+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:30:44.650+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:30:44.649+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:20:00+00:00, run_after=2023-11-22T22:30:00+00:00
+[2023-11-22T23:30:44.775+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.460 seconds
+[2023-11-22T23:31:33.388+0100] {processor.py:157} INFO - Started process (PID=26269) to work on /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:31:33.395+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py for tasks to queue
+[2023-11-22T23:31:33.400+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:31:33.398+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:31:33.535+0100] {processor.py:839} INFO - DAG(s) dict_keys(['carburants_request']) retrieved from /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py
+[2023-11-22T23:31:33.635+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:31:33.634+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T23:31:33.824+0100] {logging_mixin.py:151} INFO - [2023-11-22T23:31:33.823+0100] {dag.py:3722} INFO - Setting next_dagrun for carburants_request to 2023-11-22T22:20:00+00:00, run_after=2023-11-22T22:30:00+00:00
+[2023-11-22T23:31:34.016+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/carburant_gcp/dags/carburants_request_DAG.py took 0.642 seconds

@@ -1,0 +1,20 @@
+[2023-11-22T23:24:37.977+0100] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: xml_parsing.parse_xml scheduled__2023-11-22T22:23:00+00:00 [queued]>
+[2023-11-22T23:24:37.984+0100] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: xml_parsing.parse_xml scheduled__2023-11-22T22:23:00+00:00 [queued]>
+[2023-11-22T23:24:37.984+0100] {taskinstance.py:1361} INFO - Starting attempt 2 of 6
+[2023-11-22T23:24:38.002+0100] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): parse_xml> on 2023-11-22 22:23:00+00:00
+[2023-11-22T23:24:38.005+0100] {standard_task_runner.py:57} INFO - Started process 22702 to run task
+[2023-11-22T23:24:38.008+0100] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'xml_parsing', 'parse_xml', 'scheduled__2023-11-22T22:23:00+00:00', '--job-id', '71', '--raw', '--subdir', 'DAGS_FOLDER/xml_parsing_DAG.py', '--cfg-path', '/tmp/tmp6ovtbn98']
+[2023-11-22T23:24:38.009+0100] {standard_task_runner.py:85} INFO - Job 71: Subtask parse_xml
+[2023-11-22T23:24:38.039+0100] {task_command.py:416} INFO - Running <TaskInstance: xml_parsing.parse_xml scheduled__2023-11-22T22:23:00+00:00 [running]> on host yzpt-Lenovo-ideapad-320S-14IKB
+[2023-11-22T23:24:38.098+0100] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='xml_parsing' AIRFLOW_CTX_TASK_ID='parse_xml' AIRFLOW_CTX_EXECUTION_DATE='2023-11-22T22:23:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-22T22:23:00+00:00'
+[2023-11-22T23:24:38.099+0100] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/yzpt/projects/carburant_gcp/venv/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/yzpt/projects/carburant_gcp/venv/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: parse_xml() missing 1 required positional argument: 'xml_file'
+[2023-11-22T23:24:38.102+0100] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=xml_parsing, task_id=parse_xml, execution_date=20231122T222300, start_date=20231122T222437, end_date=20231122T222438
+[2023-11-22T23:24:38.113+0100] {standard_task_runner.py:104} ERROR - Failed to execute job 71 for task parse_xml (parse_xml() missing 1 required positional argument: 'xml_file'; 22702)
+[2023-11-22T23:24:38.139+0100] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-22T23:24:38.150+0100] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
