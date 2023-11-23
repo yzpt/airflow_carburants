@@ -5,6 +5,23 @@ Implementing a data pipeline with Airflow and PostgreSQL through three different
 - Docker
 - GCP : Composer & BigQuery
 
+- [Airflow \& PostgreSQL : Prix des carburants en France](#airflow--postgresql--prix-des-carburants-en-france)
+      - [Data source](#data-source)
+  - [1. Local implementation](#1-local-implementation)
+    - [1.1. Python environment](#11-python-environment)
+    - [1.2. Postgresql](#12-postgresql)
+    - [1.3. Airflow](#13-airflow)
+      - [New terminal : starting scheduler](#new-terminal--starting-scheduler)
+      - [New terminal : starting webserver](#new-terminal--starting-webserver)
+      - [Airflow UI accessible at http://localhost:8080](#airflow-ui-accessible-at-httplocalhost8080)
+      - [Check the data :](#check-the-data-)
+      - [If psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "user\_test"](#if-psql-error-connection-to-server-on-socket-varrunpostgresqlspgsql5432-failed-fatal--peer-authentication-failed-for-user-user_test)
+      - [Close the webserver](#close-the-webserver)
+  - [2. Docker implementation](#2-docker-implementation)
+    - [2.1. Postgresql](#21-postgresql)
+    - [2.2. Airflow](#22-airflow)
+
+
 <hr>
 
 #### Data source
