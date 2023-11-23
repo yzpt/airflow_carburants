@@ -157,16 +157,16 @@ EOF
 
 ##### Checking data : if peer authentication error 
 
-    If psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "user_test"
+  If psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "user_test"
 
-    Then, edit the pg_hba.conf file and change the method column to password for the local connection:
+  Then, edit the pg_hba.conf file and change the method column to password for the local connection:
 
-    ```bash
-    # <pg_hba.conf>
-    
-    # TYPE  DATABASE        USER            ADDRESS                 METHOD
-    local   all             all                                     password
-    ```
+  ```bash
+  # <pg_hba.conf>
+  
+  # TYPE  DATABASE        USER            ADDRESS                 METHOD
+  local   all             all                                     password
+  ```
 
 
 #### Close the webserver
