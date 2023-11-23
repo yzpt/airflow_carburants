@@ -5,6 +5,8 @@ Implementing a data pipeline with Airflow and PostgreSQL through three different
 - Docker
 - GCP : Composer & BigQuery
 
+<hr>
+
 - [Airflow \& PostgreSQL : Prix des carburants en France](#airflow--postgresql--prix-des-carburants-en-france)
       - [Data source](#data-source)
   - [1. Local implementation](#1-local-implementation)
