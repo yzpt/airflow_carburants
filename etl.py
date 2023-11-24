@@ -71,7 +71,7 @@ def db_insert(root):
             sp98_prix           = float(item.find("prix[@nom='SP98']").get('valeur')) if item.find("prix[@nom='SP98']") is not None else None
             
             cursor.execute(f'''
-                INSERT INTO {table} (
+                INSERT INTO records (
                         id, record_timestamp, cp, pop, adresse, ville, horaires, services, latitude, longitude, gazole_maj, gazole_prix, sp95_maj, sp95_prix, e85_maj, e85_prix, gplc_maj, gplc_prix, e10_maj, e10_prix, sp98_maj, sp98_prix
                     ) VALUES (
                         %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s,%s, %s,%s, %s,%s, %s,%s, %s,%s
