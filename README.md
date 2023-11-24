@@ -109,11 +109,10 @@ EOF
 # init airflow
 export AIRFLOW_HOME=$(pwd)
 airflow db init
-airflow users create --USER_NAME admin --password admin --firstname Yohann --lastname Zapart --role Admin --email yohann@zapart.com
+airflow users create --username admin --password admin --firstname Yohann --lastname Zapart --role Admin --email yohann@zapart.com
 
 # airflow.cfg --> don't load example dags
 sed -i 's/load_examples = True/load_examples = False/g' airflow.cfg
-
 ```
 
 #### Star scheduler on a new terminal
@@ -164,7 +163,7 @@ EOF
   Then, edit the pg_hba.conf file and change the method column to password for the local connection:
 
   ```bash
-  # <pg_hba.conf>
+  # pg_hba.conf
   
   # TYPE  DATABASE        USER            ADDRESS                 METHOD
   local   all             all                                     password
