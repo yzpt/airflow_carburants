@@ -112,7 +112,7 @@ SELECT id, record_timestamp, ville, adresse, latitude, longitude FROM records OR
 
 # === DOCKER ===================================================================================================
 
-# === Airflow Docker ===========================================================================================
+# === Offical Airflow Docker ===========================================================================================
 # https://airflow.apache.org/docs/docker-stack/index.html
 curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.7.3/docker-compose.yaml'
 mkdir ./dags ./logs ./plugins
@@ -122,4 +122,44 @@ docker compose down --volumes --remove-orphans
 docker compose up
 
 
-git add . && git commit -m "airflow docker" && git push origin docker   
+
+# === try vendredi 24/11 ===========================================================================================
+source venv/bin/activate
+pip freeze > requirements.txt
+
+sudo chmod 777 ./script/entrypoint.sh
+# sudo chmod 777 ./requirements.txt
+
+# > docker-compose.yaml
+docker compose down
+docker compose up airflow-postgres -d --remove-orphans
+docker compose up -d airflow-postgres airflow-scheduler --remove-orphans
+docker compose up -d airflow-postgres airflow-scheduler postgres-db --remove-orphans
+# Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:5432 -> 0.0.0.0:0: listen tcp 0.0.0.0:5432: bind: address already in use
+
+# airflow-postgres  ports : 5433:5432
+# postgres-db       ports : 5434:5432
+
+# > nb_psql_docker_service.ipynb
+# connexion & création table depuis psycopg2 ok
+
+
+# > dags/xml_parsing.py
+# conn = psycopg2.connect(
+#             database="psql_db_name",
+#             user="postgres",
+#             password="postgres",
+#             host="localhost",
+#             port="5434"
+#         )
+# > trigger dag
+
+# airflow-scheduler
+# *** !!!! Please make sure that all your Airflow components (e.g. schedulers, webservers, workers and triggerer) have the same 'secret_key' configured in 'webserver' section and time is synchronized on all your machines (for example with ntpd)
+# See more at https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#secret-key
+# *** Could not read served logs: Client error '403 FORBIDDEN' for url 'http://airflow-scheduler:8793/log/dag_id=xml_parsing/run_id=manual__2023-11-24T12:34:41.398552+00:00/task_id=download_file/attempt=1.log'
+# For more information check: https://httpstatuses.com/403
+
+
+# === ntpd :
+# > sh_ntpd.sh
