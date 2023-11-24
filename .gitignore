@@ -5,4 +5,11 @@ airflow.db
 
 key*
 
+instantanes*
 
+nb_extract_data.ipynb
+
+airflow-webserver.pid
+
+
+dags/__pycache__/

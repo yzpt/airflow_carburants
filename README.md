@@ -53,26 +53,26 @@ pip freeze > requirements.txt
 
 ```bash
 # variables
-export DB_NAME=carburants
+export DB_NAME=carburants_database
 export TABLE_NAME=records
-export USERNAME=user
-export PASSWORD=password
+export USER_NAME=carburants_user
+export PASSWORD=pp
 
 # create user and database
-sudo -i -u postgres psql  <<EOF
+sudo -i -u postgres psql <<EOF
 CREATE DATABASE $DB_NAME;
-CREATE USER $USERNAME WITH PASSWORD '$PASSWORD';
-ALTER ROLE $USERNAME SET client_encoding TO 'utf8';
-ALTER ROLE $USERNAME SET default_transaction_isolation TO 'read committed';
-ALTER ROLE $USERNAME SET timezone TO 'Europe/Paris';
-GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $USERNAME;
+CREATE USER $USER_NAME WITH PASSWORD '$PASSWORD';
+ALTER ROLE $USER_NAME SET client_encoding TO 'utf8';
+ALTER ROLE $USER_NAME SET default_transaction_isolation TO 'read committed';
+ALTER ROLE $USER_NAME SET timezone TO 'Europe/Paris';
+GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $USER_NAME;
 EOF
 ```
 #### Create table
 
 ```bash
 # create table
-sudo -i -u $USERNAME psql $DB_NAME <<EOF
+psql -U $USER_NAME $DB_NAME <<EOF
 CREATE TABLE IF NOT EXISTS $TABLE_NAME (
     record_timestamp TIMESTAMP,
     id BIGINT,
@@ -109,10 +109,11 @@ EOF
 # init airflow
 export AIRFLOW_HOME=$(pwd)
 airflow db init
-airflow users create --username admin --firstname Yohann --lastname Zapart --role Admin --email yohann@zapart.com
+airflow users create --USER_NAME admin --password admin --firstname Yohann --lastname Zapart --role Admin --email yohann@zapart.com
 
 # airflow.cfg --> don't load example dags
 sed -i 's/load_examples = True/load_examples = False/g' airflow.cfg
+
 ```
 
 #### Star scheduler on a new terminal
@@ -144,7 +145,7 @@ Accessible at [http://localhost:8080](http://localhost:8080)
 #### Check the data
 
 ```bash
-psql -U $USERNAME $DB_NAME <<EOF
+psql -U $USER_NAME $DB_NAME <<EOF
 SELECT id, record_timestamp, ville, adresse, latitude, longitude 
 FROM $TABLE_NAME 
 WHERE lower(ville) = 'lille'
@@ -169,13 +170,18 @@ EOF
   local   all             all                                     password
   ```
 
+  Then, restart the postgresql service:
+
+  ```bash
+  sudo service postgresql restart
+  ```
 
 #### Close the webserver
 
 After closing the webserver, the process is still running in the background. To kill it, we need to find the PID and kill it.
 
 ```bash
-# Read the PID from the file
+# Read the PID from the file generated on the root by airflow
 PID=$(cat airflow-webserver.pid)
 
 # Kill the process

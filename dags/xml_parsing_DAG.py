@@ -13,8 +13,7 @@ default_args = {
     'retry_delay': timedelta(seconds=30)
 }
 
-# with DAG('xml_parsing', default_args=default_args, schedule_interval='*/10 * * * *', catchup=False) as dag:
-with DAG('xml_parsing', default_args=default_args, schedule_interval='* * * * *', catchup=False) as dag:
+with DAG('xml_parsing', default_args=default_args, schedule_interval='*/10 * * * *', catchup=False) as dag:
 
     download_file_task = PythonOperator(
         task_id='download_file',
