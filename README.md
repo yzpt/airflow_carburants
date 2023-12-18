@@ -2,8 +2,10 @@
 
 Implementing a data pipeline with Airflow and PostgreSQL through different approaches:
 - Local with python environment
-- Local cluster of containers with docker compose
+- Docker cluster of containers 
 - GCP : Composer & BigQuery
+
+![img/diagram_carburants_airflow.png](img/diagram_carburants_airflow.png)
 
 <hr>
 
