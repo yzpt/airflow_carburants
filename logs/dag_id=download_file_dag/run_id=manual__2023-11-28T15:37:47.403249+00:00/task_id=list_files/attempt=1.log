@@ -1,0 +1,17 @@
+[2023-11-28T16:37:52.262+0100] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: download_file_dag.list_files manual__2023-11-28T15:37:47.403249+00:00 [queued]>
+[2023-11-28T16:37:52.269+0100] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: download_file_dag.list_files manual__2023-11-28T15:37:47.403249+00:00 [queued]>
+[2023-11-28T16:37:52.270+0100] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-28T16:37:52.293+0100] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): list_files> on 2023-11-28 15:37:47.403249+00:00
+[2023-11-28T16:37:52.300+0100] {standard_task_runner.py:57} INFO - Started process 10923 to run task
+[2023-11-28T16:37:52.306+0100] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'download_file_dag', 'list_files', 'manual__2023-11-28T15:37:47.403249+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/allo2_dag.py', '--cfg-path', '/tmp/tmp6ow62b4d']
+[2023-11-28T16:37:52.307+0100] {standard_task_runner.py:85} INFO - Job 25: Subtask list_files
+[2023-11-28T16:37:52.340+0100] {task_command.py:416} INFO - Running <TaskInstance: download_file_dag.list_files manual__2023-11-28T15:37:47.403249+00:00 [running]> on host yzpt-Lenovo-ideapad-320S-14IKB
+[2023-11-28T16:37:52.401+0100] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='download_file_dag' AIRFLOW_CTX_TASK_ID='list_files' AIRFLOW_CTX_EXECUTION_DATE='2023-11-28T15:37:47.403249+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-28T15:37:47.403249+00:00'
+[2023-11-28T16:37:52.402+0100] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-28T16:37:52.403+0100] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'ls -l']
+[2023-11-28T16:37:52.410+0100] {subprocess.py:86} INFO - Output:
+[2023-11-28T16:37:52.412+0100] {subprocess.py:93} INFO - total 0
+[2023-11-28T16:37:52.413+0100] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-11-28T16:37:52.434+0100] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=download_file_dag, task_id=list_files, execution_date=20231128T153747, start_date=20231128T153752, end_date=20231128T153752
+[2023-11-28T16:37:52.477+0100] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-28T16:37:52.494+0100] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

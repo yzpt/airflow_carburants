@@ -1,0 +1,11 @@
+[2023-11-28T16:23:13.284+0100] {processor.py:157} INFO - Started process (PID=8141) to work on /home/yzpt/projects/airflow_carburants/dags/allo.py
+[2023-11-28T16:23:13.285+0100] {processor.py:829} INFO - Processing file /home/yzpt/projects/airflow_carburants/dags/allo.py for tasks to queue
+[2023-11-28T16:23:13.286+0100] {logging_mixin.py:151} INFO - [2023-11-28T16:23:13.286+0100] {dagbag.py:536} INFO - Filling up the DagBag from /home/yzpt/projects/airflow_carburants/dags/allo.py
+[2023-11-28T16:23:13.303+0100] {processor.py:839} INFO - DAG(s) dict_keys(['download_file_dag']) retrieved from /home/yzpt/projects/airflow_carburants/dags/allo.py
+[2023-11-28T16:23:13.436+0100] {logging_mixin.py:151} INFO - [2023-11-28T16:23:13.435+0100] {manager.py:499} INFO - Created Permission View: %s
+[2023-11-28T16:23:13.448+0100] {logging_mixin.py:151} INFO - [2023-11-28T16:23:13.448+0100] {manager.py:499} INFO - Created Permission View: %s
+[2023-11-28T16:23:13.464+0100] {logging_mixin.py:151} INFO - [2023-11-28T16:23:13.463+0100] {manager.py:499} INFO - Created Permission View: %s
+[2023-11-28T16:23:13.465+0100] {logging_mixin.py:151} INFO - [2023-11-28T16:23:13.464+0100] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-28T16:23:13.475+0100] {logging_mixin.py:151} INFO - [2023-11-28T16:23:13.475+0100] {dag.py:2963} INFO - Creating ORM DAG for download_file_dag
+[2023-11-28T16:23:13.485+0100] {logging_mixin.py:151} INFO - [2023-11-28T16:23:13.485+0100] {dag.py:3722} INFO - Setting next_dagrun for download_file_dag to 2022-01-01T00:00:00+00:00, run_after=2022-01-02T00:00:00+00:00
+[2023-11-28T16:23:13.511+0100] {processor.py:179} INFO - Processing /home/yzpt/projects/airflow_carburants/dags/allo.py took 0.229 seconds

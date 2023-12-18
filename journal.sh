@@ -21,12 +21,12 @@ sed -i 's/load_examples = True/load_examples = False/g' airflow.cfg
 
 # starting scheduler
 source venv/bin/activate
-export AIRFLOW_HOME=/home/yzpt/projects/carburant_gcp
+export AIRFLOW_HOME=$(pwd)
 airflow scheduler
 
 # starting webserver
 source venv/bin/activate
-export AIRFLOW_HOME=/home/yzpt/projects/carburant_gcp
+export AIRFLOW_HOME=$(pwd)
 airflow webserver --port 8080
 
 
@@ -160,6 +160,14 @@ gcloud billing projects link $PROJECT_ID --billing-account $BILLING_ACCOUNT_ID
 # enable the required APIs
 gcloud services enable composer.googleapis.com
 
+# === Storage
+# create a bucket
+BUCKET_NAME=carburants-composer-bucket
+gsutil mb -l europe-west2 gs://$BUCKET_NAME
+
+
+
+
 # === Composer
 # create composer environment
 # https://cloud.google.com/composer/docs/how-to/managing/creating
@@ -177,35 +185,32 @@ gcloud composer environments create cli-1 \
     --web-server-machine-type composer-n1-webserver-2
 
 
-source venv/bin/activate
-pip install google-cloud-bigquery
-pip install google-cloud-storage
 
-# > dags/etl.py
 
 # upload a DAG to the environment
 gcloud composer environments storage dags import \
     --environment cli-1 \
     --location europe-west2 \
-    --source dags/composer_dag.py
+    --source dags/allo2_dag.py
 
 
 # === dag dependencies ==========================================================================================
 # venv
-python3 -m venv venv-composer-dag
-source venv-composer-dag/bin/activate
+python3 -m venv venv-composer-dag-2
+source venv-composer-dag-2/bin/activate
 pip install requests
 pip install lxml
+# pip install google-cloud-bigquery
+# pip install google-cloud-storage
 pip freeze > requirements-composer-dag.txt
-# > requirements-composer-dag.txt
-# charset-normalizer<3.0.0,>=2.0.0
 
-# certifi==2023.11.17
-# charset-normalizer<3.0.0,>=2.0.0
-# idna==3.6
-# lxml==4.9.3
-# requests==2.31.0
-# urllib3==2.1.0
+
+# RROR: (gcloud.composer.environments.update) Error updating [projects/carburants-composer/locations/europe-west2/environments/cli-1]: Operation [projects/carburants-composer/locations/europe-west2/operations/16312a7d-1ed9-4026-b95a-ace483b07f93] 
+# failed: Failed to install Python packages. 
+# aiohttp 3.8.3 has requirement charset-normalizer<3.0,>=2.0, but you have charset-normalizer 3.3.2.
+#  Check the Cloud Build log at https://console.cloud.google.com/cloud-build/builds/078063ac-a6b3-488b-befd-32d31af24946?project=10289516830 for details. For detailed instructions see https://cloud.google.com/composer/docs/troubleshooting-package-installation
+sed -i 's/charset-normalizer==3.3.2/charset-normalizer<3.0,>=2.0/g' requirements-composer-dag.txt
+
 
 # add packages to the environment
 gcloud composer environments update cli-1 \
@@ -216,3 +221,37 @@ gcloud composer environments update cli-1 \
 
 # open the Airflow UI
 gcloud composer environments describe cli-1 --location europe-west2 --format="value(config.airflowUri)"
+
+
+# === BigQuery =================================================================================================
+# bq create dataset
+bq mk --dataset carburants-composer:test_dataset
+
+# create table
+bq mk --table carburants-composer:test_dataset.test_table \
+    id:INTEGER,nom:STRING,prénom:STRING
+
+bq mk --schema table_schema_bq.json --table carburants-composer:test_dataset.test_carbu 
+
+
+# delete table
+bq rm -f carburants-composer:test_dataset.test_table
+
+
+
+gsutil cp data.zip gs://carburants-composer-bucket/data.zip
+gsutil ls gs://carburants-composer-bucket/
+gsutil cp gs://carburants-composer-bucket/data.zip data.zip
+
+
+# upload a DAG to the environment
+gcloud composer environments storage dags import \
+    --environment cli-1 \
+    --location europe-west2 \
+    --source dags/operators_dag.py
+
+# list Dags
+gcloud composer environments storage dags list \
+    --environment cli-1 \
+    --location europe-west2
+

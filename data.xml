@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <row>
+    <id>26</id>
+    <nom>yohann</nom>
+    <prénom>zapart</prénom>
+  </row>
+  <row>
+    <id>13</id>
+    <nom>Afred</nom>
+    <prénom>Mongo</prénom>
+  </row>
+</root>

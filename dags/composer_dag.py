@@ -5,6 +5,16 @@ from datetime import datetime
 import requests
 import zipfile
 import xml.etree.ElementTree as ET
+import os
+
+
+def try_storage():
+    try:
+        storage_client = storage.Client()
+        buckets = list(storage_client.list_buckets())
+        print(buckets)
+    except Exception as e:
+        print(e)
 
 def download_file():
     try:
@@ -78,8 +88,14 @@ default_args = {
     'retry_delay': timedelta(seconds=30)
 }
 
-with DAG('xml_parsing', default_args=default_args, schedule_interval='*/10 * * * *', catchup=False) as dag:
+with DAG('xml_parsing', default_args=default_args, schedule_interval='*/30 * * * *', catchup=False) as dag:
 
+    try_storage_task = PythonOperator(
+        task_id='try_storage',
+        python_callable=try_storage,
+        dag=dag,
+    )
+    
     download_file_task = PythonOperator(
         task_id='download_file',
         python_callable=download_file,
@@ -99,4 +115,4 @@ with DAG('xml_parsing', default_args=default_args, schedule_interval='*/10 * * *
         dag=dag,
     )
 
-    download_file_task >> parse_xml_task >> db_insert_task
+    try_storage >> download_file_task >> parse_xml_task >> db_insert_task

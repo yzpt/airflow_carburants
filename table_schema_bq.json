@@ -1,0 +1,112 @@
+[
+    {
+        "name": "record_timestamp",
+        "type": "TIMESTAMP",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "id",
+        "type": "INT64",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "latitude",
+        "type": "FLOAT64",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "longitude",
+        "type": "FLOAT64",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "cp",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "pop",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "adresse",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "ville",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "horaires",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "services",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "gazole_maj",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "gazole_prix",
+        "type": "FLOAT64",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "sp95_maj",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "sp95_prix",
+        "type": "FLOAT64",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "e85_maj",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "e85_prix",
+        "type": "FLOAT64",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "gplc_maj",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "gplc_prix",
+        "type": "FLOAT64",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "e10_maj",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "e10_prix",
+        "type": "FLOAT64",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "sp98_maj",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "sp98_prix",
+        "type": "FLOAT64",
+        "mode": "NULLABLE"
+    }
+]
